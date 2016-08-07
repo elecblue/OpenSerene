@@ -1,9 +1,14 @@
 <? 
 
-// SereneCMS Administration Panel
-// Created by Atriotic, LLC
-// Author: N. Matt
-// File :: Index (Admin)
+/*
+
+	OpenSerene
+	
+	Version: 0.1.0 (Bender)
+	
+	File: admin/themes.php
+	
+*/
 
 session_start();
 

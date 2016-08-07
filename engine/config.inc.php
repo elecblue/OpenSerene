@@ -1,8 +1,14 @@
 <?
-// Serene Content Management System //
-// Created by Atriotic, LLC //
-// Written in PHP (php.net) and uses the MySQL Database Server //
-// Free for Non-Profit use  //
+
+/*
+
+	OpenSerene
+	
+	Version: 0.1.0 (Bender)
+	
+	File: engine/config.inc.php
+	
+*/
 
 // config.inc.php -- This file is required! //
 

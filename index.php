@@ -1,8 +1,14 @@
 <?php
 
-// SereneCMS
-// Atriotic, LLC
-// General Index File
+/*
+
+	OpenSerene
+	
+	Version: 0.1.0 (Bender)
+	
+	File: index.php
+	
+*/
 
 require("engine/config.inc.php");
 require("engine/function.inc.php");

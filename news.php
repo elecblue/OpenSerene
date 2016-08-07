@@ -1,5 +1,15 @@
 <?
 
+/*
+
+	OpenSerene
+	
+	Version: 0.1.0 (Bender)
+	
+	File: news.php
+	
+*/
+
 require("engine/config.inc.php");
 require("engine/function.inc.php");
 

@@ -1,5 +1,15 @@
 <?
 
+/*
+
+	OpenSerene
+	
+	Version: 0.1.0 (Bender)
+	
+	File: engine/function.inc.php
+	
+*/
+
 require("config.inc.php");
 include("dbconnect.php");
 

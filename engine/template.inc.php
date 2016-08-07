@@ -1,8 +1,14 @@
 <?php
 
-// SereneCMS Templating Engine
-// Simple, simple, simple!
-// Atriotic, LLC
+/*
+
+	OpenSerene
+	
+	Version: 0.1.0 (Bender)
+	
+	File: engine/template.inc.php
+	
+*/
 
 # Header Function
 function serene_header() {

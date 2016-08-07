@@ -1,5 +1,15 @@
 <?php
 
+/*
+
+	OpenSerene
+	
+	Version: 0.1.0 (Bender)
+	
+	File: engine/dbconnect.php
+	
+*/
+
 require("config.inc.php");
 
 mysql_connect ("$host", "$username", "$password") 

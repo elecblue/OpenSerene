@@ -1,4 +1,15 @@
 <? 
+
+/*
+
+	OpenSerene
+	
+	Version: 0.1.0 (Bender)
+	
+	File: admin/register.php
+	
+*/
+
 session_start();
 
 require("../engine/config.inc.php");
