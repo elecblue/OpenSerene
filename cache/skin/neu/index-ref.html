@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A layout example that shows off a responsive product landing page.">
+	
+	<title>VICEGIRLS | Do things.</title>
+	
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+	
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">	
+	
+	<link rel="stylesheet" href="css/vicegirls.css">
+	<link rel="stylesheet" href="css/vg-icons.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/jquery.anchor.js"></script>
+	<script src="js/jquery.hoverIntent.js"></script>
+	<script>
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 100) {
+				$(".splash-container").addClass("scrolled");
+			} else {
+				$(".splash-container").removeClass("scrolled");
+			}
+		});
+		$(window).scroll(function() {
+			if($(window).scrollTop() > 600){
+				$(".home-menu").css({
+					'box-shadow' : '0 1px 1px rgba(0,0,0, 0.90)'
+				});
+				$(".home-menu.pure-menu-open").css({
+					'background-color' : 'rgba(255,255,255,0.95)'
+				});
+				$(".pure-menu-selected a").css({
+					'text-shadow': 'none'
+				});
+				$(".pure-menu-grandparent a").css({
+					'text-shadow': 'none'
+				});
+				$(".pure-menu-heading").css({
+					'color': '#333333'
+				});
+				$(".heading-dropdown a").css({
+					'color': '#FCFCFC'
+				});
+			} else {
+				$(".home-menu").css({
+					'box-shadow' : 'none'
+				});
+				$(".home-menu.pure-menu-open").css({
+					'background-color' : 'rgba(0,0,0,0.1)'
+				});
+				$(".pure-menu-selected a").css({
+					'text-shadow': '#000000 0px 0px 2px'
+				});
+				$(".pure-menu-heading").css({
+					'color': '#FCFCFC'
+				});
+			};
+			if($(window).scrollTop() == 0) {
+				$("li.pure-menu-selected").removeClass("pure-menu-selected");
+				$(".menu-home").addClass("pure-menu-selected");
+			}
+		    $(".splash").css({
+		    	'opacity' : 1-(($(this).scrollTop())/700),
+		    	'top' : 1-(($(this).scrollTop()))
+		    });        
+		});
+		
+		// Changes link click presentation
+		$(document).ready(function() {
+			$('.pure-menu-grandparent li').click(function() {
+			      $("li.pure-menu-selected").removeClass("pure-menu-selected");
+			      $(this).addClass('pure-menu-selected');
+			});
+			/*$( '.pure-menu-heading' ).hover(function(){
+				$('.heading-dropdown').slideDown(200);
+			}, function(){
+				$('.heading-dropdown').slideUp(200);
+			});*/
+		});
+		
+		// Stabilize the overzealous mouseout event for the double header
+		$(document).ready(function() {
+			$(function() {
+				hiConfig = {
+					sensitivity: 1, // number = sensitivity threshold (must be 1 or higher)
+					interval: 0, // number = milliseconds for onMouseOver polling interval
+					timeout: 1500, // number = milliseconds delay before onMouseOut
+					over: function() {
+						$('.heading-dropdown').slideDown(200);
+					}, // function = onMouseOver callback (REQUIRED)
+					out: function() {
+						$('.heading-dropdown').slideUp(200);
+					} // function = onMouseOut callback (REQUIRED)
+				};
+				$('.pure-menu-heading').hoverIntent(hiConfig);
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">VICEGIRLS<span class="head-slash">/</span><i class="fa fa-code fa-lg header-icon"></i></a>
+        <!--<span class="head-slash">/</span>
+        <div class="bonus-menu-item">        	
+        	<a class="alt-heading" href="#"><i class="fa fa-code fa-lg"></i></a>
+        </div>-->
+        <div class="heading-dropdown">
+        	<a class="pure-menu-heading drop-heading" href="">VICEGIRLS<span class="head-slash">/</span><i class="fa fa-headphones fa-lg"></i></a>
+        </div>
+        <ul class="pure-menu-grandparent">
+            <li class="pure-menu-selected menu-home"><a href="#home"><i class="fa fa-home fa-fw"></i>&nbsp;Home</a></li>
+            <li class="pure-menu-parent">
+            	<a href="#" >Projects</a>
+            	<ul>
+            		<li><a href="#">Junction</a></li>
+            		<li><a href="#">Learnbird</a></li>
+            		<li><a href="#">OpenSerene</a></li>
+            	</ul>
+            </li>
+            <li><a href="#">Snacks</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<section id="home">
+<div class="splash-container">
+    <div class="splash" data-stellar-ratio="0.5">
+        <h1 class="splash-head"><a class="vg-icon-block vg-junction-icon vg-128 vg-centered" style="margin-bottom: 10px;"></a>Junction</h1>
+        <p class="splash-subhead" style="clear: both;">
+            Let's change the way we make music.
+        </p>
+        <p>
+            <a href="#junction" class="pure-button pure-button-primary">Say what?</a>
+        </p>
+    </div>
+</div>
+</section>
+<div class="content-wrapper">
+    <section id="about-us">
+    	<div class="content first-content">
+	        <h2 class="content-head is-center">Hello, hello, hello!</h2>
+	
+	        <div class="pure-g">
+	            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+	
+	                <h3 class="content-subhead">
+	                    <i class="fa fa-rocket"></i>
+	                    Get Started Quickly
+	                </h3>
+	                <p>
+	                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+	                </p>
+	            </div>
+	            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+	                <h3 class="content-subhead">
+	                    <i class="fa fa-mobile"></i>
+	                    Responsive Layouts
+	                </h3>
+	                <p>
+	                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+	                </p>
+	            </div>
+	            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+	                <h3 class="content-subhead">
+	                    <i class="fa fa-th-large"></i>
+	                    Modular
+	                </h3>
+	                <p>
+	                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+	                </p>
+	            </div>
+	            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+	                <h3 class="content-subhead">
+	                    <i class="fa fa-check-square-o"></i>
+	                    Plays Nice
+	                </h3>
+	                <p>
+	                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+	                </p>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<section id="snacks">
+	    <div class="ribbon l-box-lrg pure-g deep-ribbon">
+	        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+	            <img class="pure-img-responsive" alt="File Icons" width="300" src="img/common/file-icons.png">
+	        </div>
+	        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+	
+	            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+	
+	            <p>
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	                consequat. Duis aute irure dolor.
+	            </p>
+	        </div>
+	    </div>
+	</section>
+
+    <div class="content">
+        <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+
+                        <label for="name">Your Name</label>
+                        <input id="name" type="text" placeholder="Your Name">
+
+
+                        <label for="email">Your Email</label>
+                        <input id="email" type="email" placeholder="Your Email">
+
+                        <label for="password">Your Password</label>
+                        <input id="password" type="password" placeholder="Your Password">
+
+                        <button type="submit" class="pure-button">Sign Up</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h4>Contact Us</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </p>
+
+                <h4>More Information</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+
+    </div>
+	
+	<!-- is-center -->
+    <div class="footer l-box">
+    	<div class="pure-g">
+    	    <div class="pure-u-1 pure-u-md-1-3">
+    	    	<div class="pure-g">
+	    	    	<div class="pure-u-1 pure-u-md-1-1">
+	    	    		Are you looking for our <a href="#">music</a>?
+	    	    	</div>
+	    	    </div>
+    	    </div>
+    	    <div class="pure-u-1 pure-u-md-1-3 is-center">
+    	    	&copy; 2015 &mdash; <strong>VICEGIRLS</strong>
+    	    </div>
+    	    <div class="pure-u-1 pure-u-md-1-3 footer-right">
+    	    	Made with distain in Orlando, FL
+    	    	<!-- If I see another "Made With <3 from X" footer, I'm going to explode. -->
+    	    </div>
+    	</div>
+    </div>
+
+</div>
+<script>
+	$(function() {
+	    $('a[href*=#]').anchor({
+	        transitionDuration : 1200
+	    });
+	});
+</script>
+</body>
+</html>

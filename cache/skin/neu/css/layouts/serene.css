@@ -1,0 +1,765 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.7em;
+    color: #FCFCFC;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    background-color: #FFFFFF;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    color: #00B9FF;
+}
+
+a, a:visited, a:focus {
+	color: #FF0074;
+	text-decoration: none;
+}
+
+	a:hover {
+		color: #09BBFF;
+	}	
+
+
+/* LAYOUT CSS */
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+#layout {
+    padding: 0;
+}
+
+/*
+ * -- LAYOUT STYLES --
+ * These are some useful classes which I will need
+ */
+ 
+.l-box {
+    padding: 1em;
+}
+
+.l-box-lrg {
+    padding: 2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.is-center {
+    text-align: center;
+}
+
+
+
+/*
+ * -- PURE FORM STYLES --
+ * Style the form inputs and labels
+ */
+ 
+.pure-form label {
+    margin: 1em 0 0;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.pure-form input[type] {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/*
+ * -- PURE BUTTON STYLES --
+ * I want my pure-button elements to look a little different
+ */
+ 
+.pure-button {
+    background-color: #1F8DD6;
+    color: #FFFFFF;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+}
+
+a.pure-button-primary {
+    background: #FFFFFF;
+    color: #1F8DD6;
+    border-radius: 5px;
+    font-size: 120%;
+}
+
+	a.pure-button-primary:hover {
+		background: linear-gradient(180deg, #FFFFFF, #CCCCCC);
+		-webkit-transition: 0.2s ease;
+		transition: 0.2s ease;
+		-webkit-transition-property: background;
+		transition-property: background;
+	}
+
+
+
+/*
+ * -- MENU STYLES --
+ * I want to customize how my .pure-menu looks at the top of the page
+ */
+
+.home-menu {
+    padding: 0.5em;
+    text-align: center;
+    box-shadow: 0;
+    font-family: "Source Sans Pro", "Open Sans", sans-serif;
+    display: none;
+}
+
+.home-menu.pure-menu-open {
+    background-color: #326DE6;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+    -webkit-transition-property: background-color;
+    transition-property: background-color;
+    max-height: 7.5%;
+}
+
+.pure-menu.pure-menu-open.pure-menu-fixed {
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+    /* I need a higher z-index here because of the scroll-over effect. */
+    z-index: 4;
+    height: 100%;
+}
+
+.home-menu .pure-menu-heading {
+    color: #FCFCFC;
+    font-weight: 300;
+    font-size: 1.3em;
+    text-transform: none;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+    -webkit-transition-property: color;
+    transition-property: color;
+}
+
+	.home-menu .pure-menu-heading .pure-menu-subtitle {
+		display: inline-block;
+		font-size: 0.7em;
+		font-weight: 200;
+		font-style: italic;
+		line-height: 14px;
+	}
+
+.head-slash {
+	color: #d6d6d6;
+	font-size: 1em;
+	display: inline-block;
+	width: auto;
+	position: relative;
+	top: auto;
+	left: auto;
+	line-height: 12px;
+	margin-left: 6px;
+	margin-right: 5px;
+}
+
+	.header-icon {
+		color: #b5b5b5;
+		position: relative;
+		top: -1px;
+	}
+
+.home-menu .bonus-menu-item {
+	display: inline-block;
+	position: absolute;
+	left: 125px;
+	overflow: hidden;
+	min-width: 70px;
+	height: 30px;
+	text-align: left;
+	top: 6px;
+}
+
+	.home-menu .bonus-menu-item .alt-heading {
+		position: absolute;
+		top: 2px;
+		display: block;
+		color: #8E8E8E;
+		text-transform: uppercase;
+		text-align: left;
+		float: left;
+	}
+	
+	.heading-dropdown {
+		display: none;
+		max-height: 50px;
+		max-width: 150px;
+		padding: 0;
+		position: absolute;
+		float: left;
+		top: auto;
+		left: auto;
+		background: transparent;
+	}
+	
+		.bonus-menu-item.item-fix {
+			height: 32px;
+			width: 32px;
+			position: absolute;
+			top: 10px;
+			left: 118px;
+		}
+	
+
+.home-menu .pure-menu-selected a {
+    color: #09c1d1;
+}
+
+.home-menu a {
+    color: #FFFFFF;
+}
+
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #09c1d1;
+}
+
+.pure-menu-grandparent,
+.pure-menu-parent {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.pure-menu-parent {
+	display: inline-block;
+}
+
+.pure-menu-parent:hover {
+    background: rgba(255,255,255,0.9);
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+	.pure-menu-parent:hover a {
+		display: inline-block;
+		background: transparent;
+		border: 0;
+		color: #FF0074;
+	}
+	
+		.pure-menu-parent:hover a:hover {
+			background: transparent;
+		}
+ 
+.pure-menu-parent:hover ul {
+	padding: 5px 0px 5px 0px;
+	margin: 0 0 0 0;
+	top: auto; /* Menu Bar Height */
+	left: 0;
+	visibility: visible;
+	border: 0;
+	background: rgba(255,255,255,0.9); /*#F0F0F0*/
+}
+
+	.pure-menu-parent:hover ul li {
+		padding: 5px 0 5px 0;
+		margin: 0 0 0 0;
+		border-top: 1px solid #DEDEDE;
+	}
+
+		.pure-menu-parent:hover ul li:first-child {
+			padding-top: 0;
+			margin-top: 6px;
+			border: 0;
+		}
+	
+		.pure-menu-parent:hover ul li a {
+			display: block;
+			min-width: 200px;
+			padding: 10px 10px 10px 20px;
+			color: #09BBFF;
+			background: transparent; /*#F0F0F0*/
+		}
+		
+			.pure-menu-parent:hover ul li a:hover {
+				color: #FF0074;
+			}
+			
+/* Content-related stylings */
+
+#static-head-container {
+	background: rgba( 50,108,230,1);
+	color: #FFFFFF;
+	overflow: hidden;
+}
+	
+	.static-head-container a {
+		color: #FFFFFF;
+	}
+
+	.static-head-main {
+		padding: 10px 20px;
+		line-height: 1.9em;
+	}
+
+		.static-head-main h1 {
+			font-weight: 200;
+			font-size: 2em;
+			letter-spacing: -0.04em;
+			margin-bottom: 0;
+			text-shadow: 1px 1px #1650C9, 
+						 2px 2px 0px #1650C9, 
+						 3px 3px 0px #1650C9, 
+						 4px 4px 0px #1650C9, 
+						 5px 5px 0px #1650C9, 
+						 6px 6px 0px #1650C9, 
+						 7px 7px 0px #1650C9, 
+						 8px 8px 0px #1650C9, 
+						 9px 9px 0px #1650C9, 
+						 10px 10px 0px #1650C9, 
+						 11px 11px 0px #1650C9, 
+						 12px 12px 0px #1650C9, 
+						 13px 13px 0px #1650C9, 
+						 14px 14px 0px #1650C9, 
+						 15px 15px 0px #1650C9, 
+						 16px 16px 0px #1650C9, 
+						 17px 17px 0px #1650C9, 
+						 18px 18px 0px #1650C9, 
+						 19px 19px 0px #1650C9, 
+						 20px 20px 0px #1650C9, 
+						 21px 21px 0px #1650C9, 
+						 22px 22px 0px #1650C9, 
+						 23px 23px 0px #1650C9, 
+						 24px 24px 0px #1650C9, 
+						 25px 25px 0px #1650C9;
+		}
+		
+			.static-head-main h1 a {
+				color: #FFFFFF;
+			}
+			
+				.static-head-main h1 a:hover {
+					color: rgba(117,240,187,1);
+				}
+		
+		.static-head-main h2 {
+			font-weight: 300;
+			font-size: 1.0em;
+			text-transform: uppercase;
+			margin: 0;
+			color: #F8F8F8;
+			text-shadow: 1px 1px #1650C9, 
+						 2px 2px 0px #1650C9, 
+						 3px 3px 0px #1650C9, 
+						 4px 4px 0px #1650C9, 
+						 5px 5px 0px #1650C9, 
+						 6px 6px 0px #1650C9, 
+						 7px 7px 0px #1650C9, 
+						 8px 8px 0px #1650C9, 
+						 9px 9px 0px #1650C9, 
+						 10px 10px 0px #1650C9, 
+						 11px 11px 0px #1650C9, 
+						 12px 12px 0px #1650C9, 
+						 13px 13px 0px #1650C9, 
+						 14px 14px 0px #1650C9, 
+						 15px 15px 0px #1650C9, 
+						 16px 16px 0px #1650C9, 
+						 17px 17px 0px #1650C9, 
+						 18px 18px 0px #1650C9, 
+						 19px 19px 0px #1650C9, 
+						 20px 20px 0px #1650C9, 
+						 21px 21px 0px #1650C9, 
+						 22px 22px 0px #1650C9, 
+						 23px 23px 0px #1650C9, 
+						 24px 24px 0px #1650C9, 
+						 25px 25px 0px #1650C9, 
+						 26px 26px 0px #1650C9, 
+						 27px 27px 0px #1650C9, 
+						 28px 28px 0px #1650C9, 
+						 29px 29px 0px #1650C9, 
+						 30px 30px 0px #1650C9;
+		}
+		
+	.static-head-secondary {
+		position: relative;
+		top: 0;
+		left: 0;
+		padding: 0;
+		font-family: "Open Sans", sans-serif;
+		font-size: 0.9em;
+		font-weight: 200;
+		text-transform: uppercase;
+		letter-spacing: 0.6px;
+	}
+	
+		.static-head-secondary a {
+			background: rgba(30,231,145,0.2);
+			color: #FFFFFF;
+			display: block;
+			height: 100%;
+			width: 100%;
+			padding: 5px 20px;
+		}
+		
+			.static-head-secondary a:hover {
+				background: rgba(9,60,170,0.8);
+			}
+	
+		.static-head-secondary ul {
+			list-style-type: none;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: 0;
+			margin: 0;
+		}
+		
+			.static-head-secondary ul li {
+				display: inline-block;
+				margin: 0;
+				padding: 0;
+			}
+			
+.main-content-container {
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.content {
+    padding: 0;
+    margin: 0;
+}
+
+.posts {
+	
+}
+
+.post {
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.post-title {
+    font-size: 2em;
+    font-weight: 200;
+    letter-spacing: -0.04em;
+    color: #222;
+    margin-bottom: 0.3em;
+}
+
+.post-avatar {
+    border-radius: 50px;
+    float: right;
+    margin-left: 1em;
+}
+
+.post-description {
+    font-family: "Roboto Slab", serif;
+    color: #444444;
+    line-height: 1.8em;
+}
+
+.post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+}
+
+.post-category {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 80%;
+}
+    .post-category-design {
+        background: #5aba59;
+    }
+    .post-category-pure {
+        background: #4d85d1;
+    }
+    .post-category-yui {
+        background: #8156a7;
+    }
+    .post-category-js {
+        background: #df2d4f;
+    }
+
+.post-images {
+    margin: 1em 0;
+}
+
+	.post-image-meta {
+	    margin-top: -3.5em;
+	    margin-left: 1em;
+	    color: #fff;
+	    text-shadow: 0 1px 1px #333;
+	}
+
+.footer {
+    text-align: center;
+    padding: 1em 0;
+}
+
+	.footer a {
+	    color: #333333;
+	    font-size: 80%;
+	}
+
+	.footer .pure-menu a:hover,
+	.footer .pure-menu a:focus {
+	    background: rgba(9,60,170,0.2);
+	    color: #333333;
+	}
+	
+	.footer-copy {
+		color: #666666;
+		text-align: left;
+		margin: 0;
+		padding: 2.5px 0 0 0;
+	}
+	
+		.footer-copy i {
+			color: #333333;
+		}
+	
+	.footer-menu {
+		text-align: right;
+	}
+	
+	.side-footer {
+		display: inline;
+	}
+	
+		.side-footer li {
+			display: inline-block;
+		}
+
+.pure-u-1pure-u-md-1-4.side-menu-padding {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.pure-menu.pure-menu-open.side-menu {
+	padding: 0;
+	margin: 0;
+	-webkit-line-break: normal;
+	border: 0;
+	background: rgba(173,128,240,1);
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	right: 0;
+	-webkit-transition: top 0.2s linear 0s;
+	transition: top 0.2s linear 0s;
+}
+
+	.pure-menu.pure-menu-open.side-menu.scrolled {
+		top: 7.75%;
+	}
+
+	.pure-menu.pure-menu-open.side-menu .side-menu-heading {
+		color: rgba(255,255,255,1);
+		font-family: "Open Sans", sans-serif;
+		font-weight: 200;
+		font-size: 1.2em;
+		text-transform: none;
+		margin-top: 0;
+		overflow: hidden;
+		z-index: 2;
+		/*text-shadow: 1px 1px 0px rgba(146, 85,235,1), 
+					 2px 2px 0px rgba(146, 85,235,1), 
+					 3px 3px 0px rgba(146, 85,235,1), 
+					 4px 4px 0px rgba(146, 85,235,1), 
+					 5px 5px 0px rgba(146, 85,235,1), 
+					 6px 6px 0px rgba(146, 85,235,1), 
+					 7px 7px 0px rgba(146, 85,235,1), 
+					 8px 8px 0px rgba(146, 85,235,1), 
+					 9px 9px 0px rgba(146, 85,235,1), 
+					 10px 10px 0px rgba(146, 85,235,1), 
+					 11px 11px 0px rgba(146, 85,235,1), 
+					 12px 12px 0px rgba(146, 85,235,1), 
+					 13px 13px 0px rgba(146, 85,235,1), 
+					 14px 14px 0px rgba(146, 85,235,1), 
+					 15px 15px 0px rgba(146, 85,235,1), 
+					 16px 16px 0px rgba(146, 85,235,1), 
+					 17px 17px 0px rgba(146, 85,235,1), 
+					 18px 18px 0px rgba(146, 85,235,1), 
+					 19px 19px 0px rgba(146, 85,235,1), 
+					 20px 20px 0px rgba(146, 85,235,1), 
+					 21px 21px 0px rgba(146, 85,235,1), 
+					 22px 22px 0px rgba(146, 85,235,1), 
+					 23px 23px 0px rgba(146, 85,235,1), 
+					 24px 24px 0px rgba(146, 85,235,1), 
+					 25px 25px 0px rgba(146, 85,235,1), 
+					 27px 27px 0px rgba(146, 85,235,1), 
+					 28px 28px 0px rgba(146, 85,235,1), 
+					 29px 29px 0px rgba(146, 85,235,1), 
+					 30px 30px 0px rgba(146, 85,235,1), 
+					 31px 31px 0px rgba(146, 85,235,1), 
+					 32px 32px 0px rgba(146, 85,235,1), 
+					 33px 33px 0px rgba(146, 85,235,1), 
+					 34px 34px 0px rgba(146, 85,235,1), 
+					 35px 35px 0px rgba(146, 85,235,1);*/
+	}
+	
+	.pure-menu-heading {
+		text-transform: capitalize;
+		background-color: rgba(100, 16,224,0.2);
+		border: 0;
+	}
+
+	.pure-menu.pure-menu-open.side-menu ul {
+		-webkit-line-break: normal;
+		line-break: normal;
+	}
+	
+		.pure-menu.pure-menu-open.side-menu ul li {
+			display: block;
+			-webkit-line-break: strict;
+			line-break: strict;
+		}
+		
+	.pure-menu.pure-menu-open .side-menu-list {
+		margin: 0;
+		padding: 0;
+	}
+		.pure-menu.pure-menu-open ul.side-menu-list li {
+			width: 100%;
+			margin: 0px;
+		}
+		
+			.pure-menu.pure-menu-open ul.side-menu-list li:hover {
+				border-left: 0px solid rgba(173,128,240,1);
+				border-right: none;
+			}
+			
+			.pure-menu.pure-menu-open ul.side-menu-list li.second-heading:hover {
+				margin-left: 0;
+				border-left: 0;
+				border-right: 0;;
+			}
+		
+		.pure-menu.pure-menu-open ul.side-menu-list li a {
+			white-space: normal;
+			color: #FFFFFF;
+			padding-left: -4px;
+			padding-right: 0;
+			position: relative;
+			display: block;
+		}
+		
+			.pure-menu.pure-menu-open ul.side-menu-list li a:hover {
+				color: rgba(173,128,240,1);
+				padding-left: -8px;
+			}
+			
+				.pure-menu.pure-menu-open ul.side-menu-list li a:hover.padding-fix {
+					color: rgba(173,128,240,1);
+					display: inline-block;
+					margin: 0 0 0 -4px;
+				}
+			
+			
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+
+@media (max-width: 48em) {
+	.static-head-main h1,
+	.static-head-main h2 {
+		text-shadow: none;
+	}
+}
+@media (min-width: 48em) {
+
+    /* We increase the body font size */
+    body {
+        font-size: 16px;
+    }
+    /* We want to give the content area some more padding */
+    .content {
+        padding: 1em;
+    }
+
+    /* We can align the menu header to the left, but float the
+    menu items to the right. */
+    .home-menu {
+        text-align: left;
+    }
+        .home-menu ul {
+            float: right;
+        }
+
+    /* We increase the height of the splash-container */
+/*    .splash-container {
+        height: 500px;
+    }*/
+
+    /* We decrease the width of the .splash, since we have more width
+    to work with */
+    .splash {
+        width: 50%;
+        height: 50%;
+    }
+
+    .splash-head {
+        font-size: 250%;
+    }
+
+
+    /* We remove the border-separator assigned to .l-box-lrg */
+    .l-box-lrg {
+        border: none;
+    }
+    
+    .footer {
+    	
+    }
+    
+    	.footer-left {
+    		text-align: center;
+    	}
+    	
+    	.footer-right {
+    		text-align: right;
+    	}
+
+}
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large devices, we want to over-ride some
+ * of the mobile and tablet styles.
+ */
+@media (min-width: 78em) {
+    /* We increase the header font size even more */
+    .splash-head {
+        font-size: 300%;
+    }
+}
