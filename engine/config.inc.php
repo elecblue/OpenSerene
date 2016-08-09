@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
 
@@ -13,32 +13,37 @@
 // config.inc.php -- This file is required! //
 
 //Edit this page with your MySQL information. 
-$host = "localhost:3306"; // Probably correct.
-$username = "root";
-$database = "serenedev";
-$password = "root";
+$host = "localhost:/opt/bitnami/mysql/tmp/mysql.sock"; // You'll probably need to remove that socket location
+$username = "dev";
+$database = "serene_test";
+$password = "password";
+
+define("SQL_DB_HOST", $host, true);
+define("SQL_DB_USER", $username, true);
+define("SQL_DB_PASS", $password, true);
+define("SQL_DB_NAME", $database, true);
 
 //Install Admin Account Information FILL OUT BEFORE INSTALL!
 $adminuser = "nik";
 $adminpass = "opensesame";
-$adminemail = "nbmatt+test@gmail.com";
+$adminemail = "youremail@domain.tld";
 
 // IGNORE
 $getcwd = getcwd();
 
 //Edit this part with your site information. Replace Example Information
-$siteName = "SereneCMS";
-$siteSlogan = "This Is A Test Slogan";
-$siteAddress = "http://localhost:80/OpenSerene"; // Where the CMS is intalled.
+$siteName = "OpenSerene";
+$siteSlogan = "This is a slogan and/or subtitle.";
+$siteAddress = "http://vicegirls.us/serene"; // Where the CMS is intalled.
 $sitePath = "$getcwd"; // Local Path to Installation
 $siteEmail = "dev@vicegirls.us";
-$siteCopyright = "VICEGIRLS & CO";
+$siteCopyright = "VICEGIRLS";
 
 //CMS Options
 $wysiwyg = "true"; 	// True determines whether the visual editor is on. True for on, false for off. Defaults to on. (The editor isn't suggested if your admin panel is lagging).
 $uploadOpt = "false";  	//This allows users to upload user option files to your server for their use. This feature has yet to be implimented so it defaults as false.
 $commentOpt = "false";	//This allows users to comment on stories. This feature has yet to be implimented and it defaults as false.
 
-$cms['version'] = "0.9.5c";
+$cms['version'] = "0.1.0 (Bender)";
 
 ?>

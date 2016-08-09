@@ -1,4 +1,4 @@
-<? 
+<?php
 
 /*
 
@@ -57,10 +57,10 @@ if($uType == "admin"){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>SereneCMS (Write)</title>
+	<title>Submit a Post &mdash; <?= "$siteName";?> | OpenSerene</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style type="text/css" media="all">@import "global.css";</style>
-	<? if($wysiwyg == "true") { ?>
+	<?php if($wysiwyg == "true") { ?>
 	<!-- Visual Editor - TinyMCE -->
 	<script language="javascript" type="text/javascript" src="../engine/jscripts/tiny_mce/tiny_mce.js"></script>
 	<script language="javascript" type="text/javascript">
@@ -88,35 +88,35 @@ if($uType == "admin"){
 		});
 	</script>
 	<!-- / -->
-	<? } else if($wysiwyg == "false") { ?>
+	<?php } else if($wysiwyg == "false") { ?>
 	<!-- Visual Editor Disabled -->
-	<? } ?>
+	<?php } ?>
 </head>
 <div id="header">
-	<? echo "$siteName"; ?>
+	<?php echo "$siteName"; ?>
 </div>
 <div id="nav">
-	<a href="index.php">the hive</a>
-	<a href="submit.php" class="active">write</a>
-	<a href="themes.php">the look</a>
-	<a href="users.php">users</a>
+	<a href="index.php">Dashboard</a>
+	<a href="submit.php" class="active">Write</a>
+	<a href="themes.php">Appearance</a>
+	<a href="users.php">User Management</a>
 </div>
 <div id="subnav">
-	<a href="submit.php">publish</a>
-	<a href="editnews.php">edit</a>
-	<a href="links.php">links</a>
+	<a href="submit.php">Submit</a>
+	<a href="editnews.php">Manage Posts</a>
+	<a href="links.php">Manage Links</a>
 </div>
 <div id="container">
-	<h1 class="section">publish a story</h1>
-	<? if($_GET['act'] == "success") { ?>
+	<h1 class="section">Submit a Post</h1>
+	<?php if($_GET['act'] == "success") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">Story Successfully Published!</h2>
 	</div>
-	<? } if($_GET['act'] == "fail") { ?>
+	<?php } if($_GET['act'] == "fail") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">Story Action Failed!</h2>
 	</div>
-	<? } ?>
+	<?php } ?>
 	<div class="sectionBox">
 		<h2 class="alert">remember these important tips</h2>
 		<div class="green">use correct grammar. no one likes to read a poorly written article.</div>
@@ -126,19 +126,19 @@ if($uType == "admin"){
 	<div class="sectionBox">
 	<form name="news" method="post" action="<?php echo $PHP_SELF; ?>">
 		<input class="title" type="text" name="title" size="50" class="story" size="71" /><br />
-		<input type="hidden" name="user" value="<? echo "$userTitle"; ?>" />
+		<input type="hidden" name="user" value="<?php echo "$userTitle"; ?>" />
 		<textarea name="message" rows="15" cols="100" class="story"></textarea><br />
 		<input class="submit" type="submit" name="submit" value="Submit">
 	</form>
 	</div>
 </div>
 <div id="footer">
-	<a href="http://www.atriotic.com">&copy; 2006 Atriotic, LLC</a><br />
-	<a href="http://www.atriotic.com/forum">Atriotic Support Forums</a>
+	POWERED BY <a href="http://github.com/vicegirls/OpenSerene">OPENSERENE</a><br />
+	<a href="http://vicegirls.us">A VICEGIRLS JOINT</a>
 </div>
 </body>
 </html>
-<? }
+<?php }
 } else if($uType == "user") {
 	header("Location: ../index.php");
 }

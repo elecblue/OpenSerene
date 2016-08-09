@@ -3,8 +3,9 @@ body {
 	color: #6e6e6e;
 	margin: 0;
 	padding: 0;
-	font-family: Calibri, Arial, Tahoma, Verdana, Trebuchet MS, 'Sans-Serif';
-	font-size: 12px;
+	font-family: "Helvetica Neue", 'Sans-Serif';
+	font-size: 1.0em;
+	font-weight: 200;
 }
 
 a, a:link, a:active, a:visited {
@@ -33,11 +34,11 @@ img {
 	background: #6e6e6e;
 	padding: 1px;
 	padding-left: 15px;
-	margin-top: 4px;
+	margin-top: 10px;
 }
 
 #nav a {
-	padding: 5px;
+	padding: 8px 15px;
 	text-decoration: none;
 	color: #FFF;
 }
@@ -50,14 +51,14 @@ img {
 
 #subnav {
 	background: #666666;
-	margin: 0;
+	margin: 5px 0px;
 	padding: 3px;
 	padding-left: 15px;
 	color: #FFF;
 }
 #subnav a {
 	color: #FFF;
-	padding: 5px;
+	padding: 8px 15px;
 	text-decoration: none;
 }
 

@@ -1,4 +1,4 @@
-<? 
+<?php
 
 /*
 
@@ -70,35 +70,35 @@ if($uType == "admin"){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>SereneCMS (Links)</title>
+	<title>Links &mdash; <?= "$siteName";?> | OpenSerene</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style type="text/css" media="all">@import "global.css";</style>
 </head>
 <div id="header">
-	<? echo "$siteName"; ?>
+	<?php echo "$siteName"; ?>
 </div>
 <div id="nav">
-	<a href="index.php">the hive</a>
-	<a href="submit.php" class="active">write</a>
-	<a href="themes.php">the look</a>
-	<a href="users.php">users</a>
+	<a href="index.php">Dashboard</a>
+	<a href="submit.php" class="active">Write</a>
+	<a href="themes.php">Appearance</a>
+	<a href="users.php">User Management</a>
 </div>
 <div id="subnav">
-	<a href="submit.php">publish</a>
-	<a href="editnews.php">edit</a>
-	<a href="links.php">links</a>
+	<a href="submit.php">Submit</a>
+	<a href="editnews.php">Manage Posts</a>
+	<a href="links.php">Manage Links</a>
 </div>
 <div id="container">
-	<h1 class="section">manage your links</h1>
-	<? if($_GET['act'] == "success") { ?>
+	<h1 class="section">Manage Links</h1>
+	<?php if($_GET['act'] == "success") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">Link Related Action Successful!</h2>
 	</div>
-	<? } if($_GET['act'] == "fail") { ?>
+	<?php } if($_GET['act'] == "fail") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">Link Related Action Failed!</h2>
 	</div>
-	<? }
+	<?php }
 	if(isset($_GET['edit'])) {
 		$id = $_GET['edit'];
 		$eQuery = mysql_query("SELECT * FROM links WHERE id='$id';");
@@ -127,7 +127,7 @@ if($uType == "admin"){
 			</table>
 		</form>
 	</div>
-	<? } ?>
+	<?php } ?>
 	<div class="sectionBox">
 	<h2 class="subsect">your current links</h2>
 	<table style="width: 100%;">
@@ -138,7 +138,7 @@ if($uType == "admin"){
 			<th style="text-align: left;">Title</th>
 			<th>&nbsp;</th>
 		</tr>
-		<? while($lRow = mysql_fetch_array($gLinks)) {
+		<?php while($lRow = mysql_fetch_array($gLinks)) {
 		if($color == 'FFF') {
             $color = 'f0f7e2';
         } else {
@@ -151,7 +151,7 @@ if($uType == "admin"){
 			<td><?= $lRow['title']; ?></td>
 			<td style="text-align: right;"><a href="?edit=<?= $lRow['id']; ?>">Edit</a> | <a href="?delete=<?= $lRow['id']; ?>">Delete</a></td>
 		</tr>
-		<? } ?>
+		<?php } ?>
 	</table>
 	</div>
 	<div class="sectionBox">
@@ -179,12 +179,12 @@ if($uType == "admin"){
 	</div>
 </div>
 <div id="footer">
-	<a href="http://www.atriotic.com">&copy; 2006 Atriotic, LLC</a><br />
-	<a href="http://www.atriotic.com/forum">Atriotic Support Forums</a>
+	POWERED BY <a href="http://github.com/vicegirls/OpenSerene">OPENSERENE</a><br />
+	<a href="http://vicegirls.us">A VICEGIRLS JOINT</a>
 </div>
 </body>
 </html>
-<? 
+<?php
 	} else if($uType == "user") {
 		header("Location: ../index.php");
 	}

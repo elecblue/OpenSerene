@@ -1,4 +1,4 @@
-<? 
+<?php
 
 /*
 
@@ -94,7 +94,7 @@ if(isset($userTitle)){
 	</tr>
 </table>
 </form>
-<? 
+<?php
 } else {
 echo "Please log in <a href=\"login.php\">here</a>. Only administrators can access the registration form!";
 }

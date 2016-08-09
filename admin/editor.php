@@ -1,4 +1,4 @@
-<? 
+<?php
 
 /*
 
@@ -51,55 +51,55 @@ if(isset($userTitle)){
 		$newContent = stripslashes($contentOne);
 			if (is_writable($filename)) {
 			    if(!$handle = fopen($filename, 'w')) {
-			        header("Location: editor.php?$filename&act=error");
+			        header("Location: editor.php?$filename&act=fail");
 			        exit;
 			    }				
 			    if (fwrite($handle, $newContent) === FALSE) {
-					header("Location: editor.php?dir=$filename&act=error");
+					header("Location: editor.php?dir=$filename&act=fail");
 					exit;
 			    }	  				
 			    header("Location: editor.php?dir=$filename&act=success");	  
 			    fclose($handle);
 			} else {
-				header("Location: editor.php?dir=$filename&act=error");
+				header("Location: editor.php?dir=$filename&act=fail");
 			}
 	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>SereneCMS (Theme Editor)</title>
+	<title>Theme Editor &mdash; <?= "$siteName";?> | OpenSerene</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style type="text/css" media="all">@import "global.css";</style>
 </head>
 <body>
 <div id="header">
-	<? echo "$siteName"; ?>
+	<?php echo "$siteName"; ?>
 </div>
 <div id="nav">
-	<a href="index.php">the hive</a>
-	<a href="submit.php">write</a>
-	<a href="themes.php" class="active">the look</a>
-	<a href="users.php">users</a>
+	<a href="index.php">Dashboard</a>
+	<a href="submit.php">Write</a>
+	<a href="themes.php" class="active">Appearance</a>
+	<a href="users.php">User Management</a>
 </div>
 <div id="subnav">
-	<a href="editor.php">theme editor</a>
-	<a href="http://www.atriotic.com/forum">find themes</a>
+	<a href="themes.php">Quit Editing</a>
+	<a href="http://github.com/vicegirls/OpenSerene">Find Themes</a>
 </div>
 <div id="container">
-	<h1 class="section">theme editor</h1>
-	<? if($_GET['act'] == "success") { ?>
+	<h1 class="section">Theme Editor</h1>
+	<?php if($_GET['act'] == "success") { ?>
 	<div class="sectionBox">
-		<h2 class="alert">Theme Edited Successfully!</h2>
+		<h2 class="alert">Changes have been successfully applied.</h2>
 	</div>
-	<? } if($_GET['act'] == "fail") { ?>
+	<?php } if($_GET['act'] == "fail") { ?>
 	<div class="sectionBox">
-		<h2 class="alert">Editing Failed - Make Sure All Is Writable!</h2>
+		<h2 class="alert">Whoops! That didn't work. Are the theme files writable?</h2>
 	</div>
-	<? } ?>
+	<?php } ?>
 	<div class="sectionBox">
 		<h2 class="subsect">editing file <?= $themeDir ?></h2>
-		<form action="editor.php?<?= $themeDir ?>&act=success" method="post">
+		<form action="editor.php?dir=<?= $themeDir ?>&act=success" method="post">
 			<textarea name="content" rows="20" cols="90"><?= $getFile ?></textarea><br />
 			<input type="hidden" name="hDir" value="<?= $themeDir ?>" />
 			<input type="submit" name="submit" value="Edit File" class="submit" />
@@ -107,12 +107,12 @@ if(isset($userTitle)){
 	</div>
 </div>
 <div id="footer">
-	<a href="http://www.atriotic.com">&copy; 2006 Atriotic, LLC</a><br />
-	<a href="http://www.atriotic.com/forum">Atriotic Support Forums</a>
+	POWERED BY <a href="http://github.com/vicegirls/OpenSerene">OPENSERENE</a><br />
+	<a href="http://vicegirls.us">A VICEGIRLS JOINT</a>
 </div>
 </body>
 </html>
-<? } else {
+<?php } else {
 	header("Location: ../index.php");
 	}
 } else if(!isset($userTitle)) {

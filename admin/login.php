@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
 
@@ -47,13 +47,13 @@ if ($_POST['username']) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>SereneCMS (Admin)</title>
+	<title>Dashboard Login &mdash; <?= "$siteName";?> | OpenSerene</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style type="text/css" media="all">@import "global.css";</style>
 </head>
 <body>
 <div id="header">
-	<? echo "$siteName"; ?>
+	<?php echo "$siteName"; ?>
 </div>
 <div id="container">
 	<h1 class="section">login</h1>
@@ -79,10 +79,10 @@ if ($_POST['username']) {
 		</form>
 	</div>
 </div>
-<? } ?>
+<?php } ?>
 <div id="footer">
-	<a href="http://www.atriotic.com">&copy; 2006 Atriotic, LLC</a><br />
-	<a href="http://www.atriotic.com/forum">Atriotic Support Forums</a>
+	POWERED BY <a href="http://github.com/vicegirls/OpenSerene">OPENSERENE</a><br />
+	<a href="http://vicegirls.us">A VICEGIRLS JOINT</a>
 </div>
 </body>
 </html>

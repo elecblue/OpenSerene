@@ -1,4 +1,4 @@
-<? 
+<?php
 
 /*
 
@@ -88,12 +88,12 @@ if(isset($userTitle) && $uType == "admin"){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title><? echo "$siteName"; ?> (Global Register)</title>
+	<title><?php echo "$siteName"; ?> (Global Register)</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<style type="text/css" media="all">@import "global.css";</style>
+	<style type="text/css" media="all">@import "../admin/global.css";</style>
 </head>
 <div id="header">
-	<? echo "$siteName"; ?>
+	<?php echo "$siteName"; ?>
 </div>
 <div id="nav">
 	<a href="index.php" class="active">user</a>
@@ -106,15 +106,15 @@ if(isset($userTitle) && $uType == "admin"){
 </div>
 <div id="container">
 	<h1 class="section">register global user</h1>
-	<? if($_GET['act'] == "success") { ?>
+	<?php if($_GET['act'] == "success") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">You've successfully registered and an email has been sent with your information.</h2>
 	</div>
-	<? } if($_GET['act'] == "fail") { ?>
+	<?php } if($_GET['act'] == "fail") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">Registration Failed.</h2>
 	</div>
-	<? } ?>
+	<?php } ?>
 	<div class="sectionBox">
 		<form action="register.php" method="post">
 		<table>
@@ -153,21 +153,21 @@ if(isset($userTitle) && $uType == "admin"){
 	</div>
 </div>
 <div id="footer">
-	<a href="http://www.atriotic.com">&copy; 2006 Atriotic, LLC</a><br />
-	<a href="http://www.atriotic.com/forum">Atriotic Support Forums</a>
+	POWERED BY <a href="http://github.com/vicegirls/OpenSerene">OPENSERENE</a><br />
+	<a href="http://vicegirls.us">A VICEGIRLS JOINT</a>
 </div>
 </body>
 </html>
-<? } else if(!isset($userTitle)) { ?>
+<?php } else if(!isset($userTitle)) { ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title><? echo "$siteName"; ?> (Register)</title>
+	<title><?php echo "$siteName"; ?> (Register)</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style type="text/css" media="all">@import "global.css";</style>
 </head>
 <div id="header">
-	<? echo "$siteName"; ?>
+	<?php echo "$siteName"; ?>
 </div>
 <div id="nav">
 	<a href="index.php" class="active">user</a>
@@ -177,15 +177,15 @@ if(isset($userTitle) && $uType == "admin"){
 </div>
 <div id="container">
 	<h1 class="section">register</h1>
-	<? if($_GET['act'] == "success") { ?>
+	<?php if($_GET['act'] == "success") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">You've successfully registered and an email has been sent with your information.</h2>
 	</div>
-	<? } if($_GET['act'] == "fail") { ?>
+	<?php } if($_GET['act'] == "fail") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">Registration Failed.</h2>
 	</div>
-	<? } ?>
+	<?php } ?>
 	<div class="sectionBox">
 		<form action="register.php" method="post">
 		<table>
@@ -215,9 +215,9 @@ if(isset($userTitle) && $uType == "admin"){
 	</div>
 </div>
 <div id="footer">
-	<a href="http://www.atriotic.com">&copy; 2006 Atriotic, LLC</a><br />
-	<a href="http://www.atriotic.com/forum">Atriotic Support Forums</a>
+	POWERED BY <a href="http://github.com/vicegirls/OpenSerene">OPENSERENE</a><br />
+	<a href="http://vicegirls.us">A VICEGIRLS JOINT</a>
 </div>
 </body>
 </html>
-<? } ?>
+<?php } ?>

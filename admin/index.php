@@ -1,4 +1,4 @@
-<? 
+<?php
 
 /*
 
@@ -42,44 +42,44 @@ if(isset($userTitle)){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>SereneCMS (Admin)</title>
+	<title>Dashboard &mdash; <?= "$siteName";?> | OpenSerene</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style type="text/css" media="all">@import "global.css";</style>
-	<? if($urch == "true") { ?><script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+	<?php if($urch == "true") { ?><script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		_uacct = "UA-87659-4";
 		urchinTracker();
-	</script><? } else if($urch == "false") { ?>
+	</script><?php } else if($urch == "false") { ?>
 	<!-- Powered By SereneCMS -->
-	<? } ?>
+	<?php } ?>
 </head>
 <body>
 <div id="header">
-	<? echo "$siteName"; ?>
+	<?php echo "$siteName"; ?>
 </div>
 <div id="nav">
-	<a href="index.php" class="active">the hive</a>
-	<a href="submit.php">write</a>
-	<a href="themes.php">the look</a>
-	<a href="users.php">users</a>
+	<a href="index.php" class="active">Dashboard</a>
+	<a href="submit.php">Write</a>
+	<a href="themes.php">Appearance</a>
+	<a href="users.php">User Management</a>
 </div>
 <div id="subnav">
-	<a href="index.php">dashboard</a>
-	<a href="settings.php">settings</a>
-	<a href="http://www.atriotic.com/forum">update</a>
-	&nbsp;&nbsp;<a href="logout.php"><i>logout</i></a>
+	<a href="index.php">Home</a>
+	<a href="settings.php">Settings</a>
+	<a href="http://github.com/vicegirls/OpenSerene">Update</a>
+	&nbsp;&nbsp;<a href="logout.php"><i>Logout</i></a>
 </div>
 <div id="container">
-	<h1 class="section">welcome to serenecms, <? echo "$userTitle"; ?></h1>
+	<h1 class="section">Dashboard</h1>
 	<div class="sectionBox">
 		<h2 class="alert">everything seems to be running smoothly, captain!</h2>
-		<div class="green">current version: <? echo $cms['version']; ?></div>
+		<div class="green">current version: <?php echo $cms['version']; ?></div>
 		<div class="white">active support: <a href="http://www.atriotic.com/forum">yes, lifetime license</a>.</div>
 		<div class="green">bug reports: twelve recently, all fixed automatically</div>
 	</div>
 	<div class="sectionBox">
 		<h2 class="subsect">recently posted stories</h2>
-		<? while($r=mysql_fetch_array($getnews)){
+		<?php while($r=mysql_fetch_array($getnews)){
 			extract($r);
 				echo("<b>".nl2br_skip_html($title)."</b><br />");
 			}
@@ -87,12 +87,12 @@ if(isset($userTitle)){
 	</div>
 </div>
 <div id="footer">
-	<a href="http://www.atriotic.com">&copy; 2006 Atriotic, LLC</a><br />
-	<a href="http://www.atriotic.com/forum">Atriotic Support Forums</a>
+	POWERED BY <a href="http://github.com/vicegirls/OpenSerene">OPENSERENE</a><br />
+	LOGGED IN AS <?= "$userTitle"; ?> (<a href="logout.php">LOGOUT</a>)
 </div>
 </body>
 </html>
-<? } else {
+<?php } else {
 	header("Location: ../index.php");
 	}
 } else if(!isset($userTitle)) {

@@ -1,4 +1,4 @@
-<? 
+<?php
 
 /*
 
@@ -64,39 +64,39 @@ if(isset($userTitle)){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>SereneCMS (Themes)</title>
+	<title>Themes &mdash; <?= "$siteName";?> | OpenSerene</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style type="text/css" media="all">@import "global.css";</style>
 </head>
 <div id="header">
-	<? echo "$siteName"; ?>
+	<?php echo "$siteName"; ?>
 </div>
 <div id="nav">
-	<a href="index.php">the hive</a>
-	<a href="submit.php">write</a>
-	<a href="themes.php" class="active">the look</a>
-	<a href="users.php">users</a>
+	<a href="index.php">Dashboard</a>
+	<a href="submit.php">Write</a>
+	<a href="themes.php" class="active">Appearance</a>
+	<a href="users.php">User Management</a>
 </div>
 <div id="subnav">
-	<a href="http://www.atriotic.com/forum">download themes</a>
+	<a href="http://github.com/vicegirls/OpenSerene">Find Themes</a>
 </div>
 <div id="container">
-	<h1 class="section">theme management</h1>
-	<? if($_GET['act'] == "success") { ?>
+	<h1 class="section">Manage Appearance</h1>
+	<?php if($_GET['act'] == "success") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">Theme Managed Successfully!</h2>
 	</div>
-	<? } if($_GET['act'] == "fail") { ?>
+	<?php } if($_GET['act'] == "fail") { ?>
 	<div class="sectionBox">
 		<h2 class="alert">Theme Action Failed!</h2>
 	</div>
-	<? } ?>
+	<?php } ?>
 	<div class="sectionBox">
 		<h2 class="subsect">change theme</h2>
 		<form action="themes.php" method="post">
 			<select name="themeswitch" style="width: 150px;">
-			<option style="border-bottom: 1px dashed #444; background: #FCFCFC; margin-bottom: 5px;"><? echo "$cTheme"; ?></option>
-			<?
+			<option style="border-bottom: 1px dashed #444; background: #FCFCFC; margin-bottom: 5px;"><?php echo "$cTheme"; ?></option>
+			<?php
 			if(is_dir($dir)) {
 				foreach(glob("../cache/skin/*") as $theme) {
 					if(($theme != ".") and ($theme != "..") and ($theme != "../cache/skin/index.html")){
@@ -113,7 +113,7 @@ if(isset($userTitle)){
 	</div>
 	<div class="sectionBox">
 		<h2 class="subsect">theme information</h2>
-		<? 
+		<?php 
 		if(is_dir($cThemeDir)){
 			foreach(glob("../cache/skin/*") as $skins)
 			{
@@ -150,11 +150,11 @@ if(isset($userTitle)){
 	</div>
 </div>
 <div id="footer">
-	<a href="http://www.atriotic.com">&copy; 2006 Atriotic, LLC</a><br />
-	<a href="http://www.atriotic.com/forum">Atriotic Support Forums</a>
+	POWERED BY <a href="http://github.com/vicegirls/OpenSerene">OPENSERENE</a><br />
+	<a href="http://vicegirls.us">A VICEGIRLS JOINT</a>
 </div>
 </body>
 </html>
-<? 	} else if(!isset($userTitle)) {
+<?php 	} else if(!isset($userTitle)) {
 		header("Location: login.php");
 } ?>
