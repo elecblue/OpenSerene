@@ -1,5 +1,8 @@
 # OpenSerene
 
+### Update (27 June 2017)
+* Until I'm ready to push the changes I made (which have temporarily broken the software), there are blatant security issues that would make using OpenSerene silly in any production context -- remember, most of the current codebase is 12 years old and first written when I was 15 years old. Please, feel free to push changes and fix those issues as you uncover them (that'd be lovely), though. [-- Nik]
+
 OpenSerene is a *very* lightweight content management system that first came into this world in 2005 and has been gently tinkered with since. I'm bringing it out of suspended animation and throwing it up on Github because it has been missing out on all of the advancements PHP development has undergone over the years. By the great power of collabrative development we can adapt OpenSerene to modern conventions. 
 
 ## Installation
